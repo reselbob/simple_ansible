@@ -1,0 +1,37 @@
+---
+- name: simplerhel
+  hosts: all
+  gather_facts: true
+  become: true
+  handlers:
+    - name: restart_sshd
+      service:
+        name: sshd
+        state: restarted
+  tasks:
+    - name: install apps
+      package:
+        state: latest
+        name:
+          - bash-completion
+          - vim
+          - nmon
+    - name: Create cooluser
+      user:
+        name: cooluser
+        state: present
+        password: "{{ 'Password1' | password_hash('sha512') }}"
+        update_password: on_create
+        shell: /bin/bash
+    - name: Edit SSHD Config
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication '
+        insertafter: '#PasswordAuthentication'
+        line: 'PasswordAuthentication yes'
+      notify: restart_sshd
+    - name: Add sudo rights for cooluser
+      copy:
+        dest: /etc/sudoers.d/cooluser
+        content: "cooluser ALL=(root) NOPASSWD: ALL"
+        backup: true
