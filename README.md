@@ -34,7 +34,7 @@ To install VirtualBox on a Linux host, execute the following commands in a termi
 
 ### MACOS  and Windows Installation
 
-To install VirtualBox on MacOS or Windows, download the operating specific installer from the VirtualBox site found [here](https://www.virtualbox.org/wiki/Downloads).
+To install VirtualBox on MacOS or Windows, download the operating system specific installer from the VirtualBox site found [here](https://www.virtualbox.org/wiki/Downloads).
 
 ## Installing Vagrant
 
@@ -53,15 +53,15 @@ To clone this code onto the host system, execute the following commands from a t
 
 `git clone https://github.com/reselbob/simple_ansible.git`
 
-Then, navigate tot he working directory:
+Then, navigate to the working directory:
 
 `cd simple_ansible`
 
-Finally, invoke the code in the Vagrantfile by executing the following command:
+Finally, invoke the code in the `Vagrantfile` by executing the following command:
 
 `vagrant up`
 
-The command set, `vagrant up` will create a `RHEL 8` virtual machine as defined in the Vagrant file. In turn the Vagrantfile will call the accompanying Ansible Playbook, [`simple_rhel.yaml`](simple_rhel.yml) to provision the newly created virtual machine with the utilities, [`bash-completion`](https://github.com/scop/bash-completion), [`vim`](https://www.vim.org/) and [`nmon`](http://nmon.sourceforge.net/pmwiki.php). Also, the Ansible Playbook will create the user, `cooluser` on the VM and assign that user the password, `Password1`.
+The command set, `vagrant up` will create a `RHEL 8` virtual machine as defined in the `Vagrantfile`. In turn the `Vagrantfile` will call the accompanying [Ansible playbook](https://www.redhat.com/en/topics/automation/what-is-an-ansible-playbook), [`simple_rhel.yaml`](simple_rhel.yml) to provision the newly created virtual machine. The virtual machine will be provisioned with the utilities, [`bash-completion`](https://github.com/scop/bash-completion), [`vim`](https://www.vim.org/) and [`nmon`](http://nmon.sourceforge.net/pmwiki.php). Also, the Ansible Playbook will create the user, `cooluser` on the VM and assign that user the password, `Password1`.
 
 The VM you'll create supports bridged networking and will be assigned an IP address dynamically using the your network's DHCP server.
 
