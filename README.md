@@ -11,8 +11,8 @@ A project that demonstrates how to create a virtual machine under [VirtualBox](h
   - [Installing Vagrant](#installing-vagrant)
   - [Installing Ansible](#installing-ansible)
 - [Creating and provisioning the virtual machine](#creating-and-provisioning-the-virtual-machine)
-- [Accessing the Virtual Machine](#accessing-the-virtual-machine)
-- [Destroying the Virtual Machine](#destroying-the-virtual-machine)
+- [Accessing the virtual machine](#accessing-the-virtual-machine)
+- [Destroying the virtual machine](#destroying-the-virtual-machine)
 
 # Prerequisites
 
@@ -67,7 +67,7 @@ The VM you'll create supports bridged networking and will be assigned an IP addr
 
 Depending on how you configured your installation of Vagrant, you might have to use `sudo` when executing the command set shown above.
 
-# Accessing the Virtual Machine
+# Accessing the virtual machine
 
 To access the virtual machine, execute the following command:
 
@@ -129,7 +129,7 @@ PING 192.168.86.42 (192.168.86.42): 56 data bytes
 64 bytes from 192.168.86.42: icmp_seq=6 ttl=64 time=0.640 ms
 
 ```
-# Destroying the Virtual Machine
+# Destroying the virtual machine
 
 After you've run the VM created and provisioned by Vagrant and Ansible, you can destroy it by executing the following command.
 
